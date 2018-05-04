@@ -1,0 +1,38 @@
+group 'com.egartech'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url 'http://artifactory.egar.egartech.com/artifactory/libs-release' }
+    maven { url "http://192.168.63.4:8081/artifactory/libs-release-local/"}
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "https://plugins.gradle.org/m2/"}
+        maven { url "http://192.168.63.4:8081/artifactory/libs-release-local/"}
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version")
+    }
+}
+
+
+dependencies {
+    compile 'com.egartech.boot:auth-spring-boot-starter:1.0+'
+    compile("org.springframework.boot:spring-boot-starter-web:${spring_boot_version}")
+    compile("org.springframework.boot:spring-boot-starter-jdbc:${spring_boot_version}")
+    compile("org.springframework.boot:spring-boot-starter-security:${spring_boot_version}")
+    compile("org.postgresql:postgresql:${postgresql_version}")
+    compile "com.microsoft.sqlserver:sqljdbc42:${sqljdbc42Version}"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

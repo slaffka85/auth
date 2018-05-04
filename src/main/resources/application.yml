@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://192.168.10.166:1433;databaseName=tab_13_3
+    username: v.tsapaev
+    password: v.tsapaev
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    sql-script-encoding: UTF-8
+
+auth:
+  type: AD
+  ad-domain: egar.egartech.com
+  auth.ad-url: ldap://192.168.10.252
+  security-domain: LMS
