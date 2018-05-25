@@ -9,5 +9,5 @@ spring:
 auth:
   type: AD
   ad-domain: egar.egartech.com
-  auth.ad-url: ldap://192.168.10.252
+  ad-url: ldap://192.168.10.252
   security-domain: LMS
